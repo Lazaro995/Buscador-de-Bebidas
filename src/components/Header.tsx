@@ -1,7 +1,15 @@
-import { Link, NavLink } from 'react-router-dom'
+import { useMemo } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
 
 
 export default function Header() {
+
+    const { pathname } = useLocation()
+
+    const isHome = useMemo(() => pathname === '/', [pathname]) // detecta la pagina de inicio 
+
+
+
     return (
         <header className="bg-slate-800" >
             <div className="mx-auto container px-5 py-16">
@@ -12,13 +20,13 @@ export default function Header() {
                     <nav className='flex gap-4'>
                         <NavLink
                             to="/"
-                            className={({isActive}) =>
-                            isActive ? 'text-orange-500 uppercase font-bold' : 'text-white uppercase font-bold' }
+                            className={({ isActive }) =>
+                                isActive ? 'text-orange-500 uppercase font-bold' : 'text-white uppercase font-bold'}
                         >Inicio</NavLink>
                         <NavLink
                             to="/favorites"
-                            className={({isActive}) =>
-                                isActive ? 'text-orange-500 uppercase font-bold' : 'text-white uppercase font-bold' }
+                            className={({ isActive }) =>
+                                isActive ? 'text-orange-500 uppercase font-bold' : 'text-white uppercase font-bold'}
                         >Favoritos</NavLink>
                     </nav>
                 </div>
