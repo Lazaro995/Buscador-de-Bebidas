@@ -5,7 +5,6 @@ import type { Categories } from "../types"
 export type RecipesSliceType = {
     categories: Categories,
     fetchCategories: () => Promise<void>
-
 }
 
 

@@ -7,4 +7,3 @@ export const CategoriesAPIResponseSchema = z.object({
         })
     )
 })
-
