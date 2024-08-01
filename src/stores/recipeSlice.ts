@@ -1,5 +1,5 @@
 import { StateCreator } from "zustand"
-import { getCategories, getRecipes } from "../services/RecipesService"
+import { getCategories, getRecipes } from "../services/RecipeService"
 import type { Categories, Drinks, SearchFilter } from "../types"
 
 export type RecipesSliceType = {
